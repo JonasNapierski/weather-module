@@ -1,7 +1,7 @@
 import json 
 import requests
 
-with open("modules/weather/module.json", "r") as f:
+with open("modules/weather-module/module.json", "r") as f:
     cfg = json.loads(f.read())
 
 
