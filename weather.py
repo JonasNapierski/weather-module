@@ -6,7 +6,10 @@ with open("modules/weather-module/module.json", "r") as f:
 
 
 
-def exec(msg):
+def exec(msg, user):
+
+    cfg = user.get_module_config("weather-module")
+
     api_url = "http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
     api_url = api_url.replace("{API key}", cfg['api_token'])
 
@@ -25,4 +28,7 @@ def exec(msg):
     temp = float(data['main']['temp'])
     temp = temp - 273.15
     #return data
-    return {"temp": temp, "msg": f"In {city} sind es {temp:.2f}°c"}
+    try:
+        return {"temp": temp, "msg": f"In {city} sind es {temp:.2f}°c", "user": user.uuid}
+    except:
+        return {"cod": 500, "user": user.uuid}

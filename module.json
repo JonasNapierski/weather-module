@@ -2,8 +2,8 @@
     "main": "weather",
     "description": "Simple Weather Module for leni",
     "author": "Jonas Napierski",
-    "api_token": "token_from_openweatherapi",
-    "examples": [
+    "api_token": "496a8bcca76a7eb93c9b2cb6bd621e11",
+    "DE": [
         "wie wird das wetter in",
         "wie wird morgen das wetter in quarnstedt",
         "wie warm wird es morgen",
