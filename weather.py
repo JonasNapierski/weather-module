@@ -9,8 +9,9 @@ with open("modules/weather-module/module.json", "r") as f:
 def exec(msg, user):
 
     cfg = user.get_module_config("weather-module")
+    APIKEY = cfg['api_token']
 
-    api_url = "http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
+    api_url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIKEY}"
     api_url = api_url.replace("{API key}", cfg['api_token'])
 
     print(msg)
