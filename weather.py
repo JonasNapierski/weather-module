@@ -13,15 +13,10 @@ def exec(msg, user):
         if mm[i] == "in":
             city = mm[i+1]
 
-
     APIKEY = cfg['api_token']
     language = cfg['language']
     units = cfg['units']
-    degree = {
-    "standart": "°K",
-    "imperial": "°F",
-    "metric"  : "°C"
-    }
+    degree = {"standart":"°K","imperial":"°F","metric": "°C"}
     grad = degree.get(units)
 
     api_url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&lang={language}&units={units}&appid={APIKEY}"           
