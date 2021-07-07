@@ -52,7 +52,7 @@ def exec(msg, user):
         city = stadt_angegeben(mm)
         city_url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&lang={language}&units={units}&appid={APIKEY}"
         data = requests.post(city_url).json()
-        print(data)
+        #print(data)
         time, section = forecast(msg)
 
         if data["cod"] == 200 and time == None:
