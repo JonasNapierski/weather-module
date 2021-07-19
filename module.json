@@ -1,18 +1,56 @@
 {
-    "main": "weather",
-    "description": "Simple Weather Module for leni",
-    "author": "Jonas Napierski",
-    "api_token": "",
-    "DE": [
-        "wie wird das wetter in",
-        "wie wird morgen das wetter in quarnstedt",
-        "wie warm wird es morgen",
-        "scheint morgen die sonne",
-        "wie ist die temperatur morgen in",
-        "regnet es morgen in",
-        "gewittert es morgen in",
-        "wie ist die temperatur in",
-        "wie heiß ist es gerade in",
-        "wetter im Heidepark"
+"main": "weather",
+"description": "Simple Weather Module for leni",
+"author": "Jonas Napierski; Leif Jahnel",
+"api_token": "",
+"units": "metric",
+"degree": {"standart":"K","imperial":"F","metric":"C"},
+"language": "de",
+"keywords": [
+  {
+    "keyword": "Heide Park",
+    "lat": 53.023668,
+    "lon": 9.878191,
+    "out": "Im Heide Park"
+  },
+  {
+    "keyword": "Schule",
+    "lat": 53.5531,
+    "lon": 9.5342,
+    "out": "In der Schule"
+  },
+  {
+    "keyword": "zuhause",
+    "lat": 53.5531,
+    "lon": 9.5342,
+    "out": "Zuhause"
+  }
+],
+"commands": [
+  {
+    "command-name": "temp-forecast",
+    "language": "DE",
+    "examples": [
+      "wie warm wird es morgen",
+      "wie ist die Temperatur morgen in Kiel",  
+      "Wie kalt ist es übermorgen in Hamburg"
     ]
+  },
+  {
+    "command-name": "temp-today",
+    "language": "DE",
+    "examples": [
+      "wie ist die Temperatur in Hamburg",
+      "wie hei\u00c3\u0178 ist es gerade in"
+    ]
+  },
+  {
+    "command-name": "rain",
+    "language": "DE",
+    "examples": [
+      "Regnet es heute noch zuhause?",
+      "Wie hoch ist die Wahrscheinlichkeit das es heute regnet?"
+    ]
+  }
+]
 }
