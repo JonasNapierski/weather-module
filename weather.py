@@ -1,7 +1,7 @@
 import json 
 import requests
 
-def stadt_angegeben(mm):
+def city_name_given(mm):
     """ if msg contains "in" returns city
     """
     for i in range(len(mm)):
@@ -9,7 +9,7 @@ def stadt_angegeben(mm):
             city = mm[i+1]
             return city
 
-def stadt_fehlt(msg, user):
+def city_name_missing(msg, user):
     """ if: keyword in cofig found, returns lat, lon
         else: None
     """
@@ -19,7 +19,7 @@ def stadt_fehlt(msg, user):
             return keywordobject
     return None
 
-def command_stadt(city,language,units,APIKEY):
+def command_city(city,language,units,APIKEY):
     city_url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&lang={language}&units={units}&appid={APIKEY}"
     data = requests.post(city_url).json()
     if data['cod'] == 200:
@@ -28,7 +28,7 @@ def command_stadt(city,language,units,APIKEY):
         return fcast
 
 def command_cord(language,units,APIKEY,msg,user):
-    keywordobject = stadt_fehlt(msg, user)
+    keywordobject = city_name_missing(msg, user)
     fcast_url = f"https://api.openweathermap.org/data/2.5/onecall?lat={keywordobject['lat']}&lon={keywordobject['lon']}&lang={language}&units={units}&appid={APIKEY}"
     fcast = requests.post(cord_url).json()
     return fcast
@@ -48,25 +48,28 @@ def exec(msg, user, predicted_cmd):
     print(mm)
     print(command)
 
+    if city_name_missing(msg, user) == None:
+        city = city_name_given(mm)
+        if command[0] == 'temp':
+            fcast = command_city(city,language,units,APIKEY)
+            temp = int(fcast[command[1]][int(command[2])]['temp']['day'])
+            return {"cod": 200, "temp": temp, "msg": f"In {city} werden es {temp}°{grad}", "user": user.uuid}
 
-    if stadt_fehlt(msg, user) == None:
-            city = stadt_angegeben(mm)
-            if command[0] == 'temp':
-                fcast = command_stadt(city,language,units,APIKEY)
-                temp = int(fcast[command[1]][int(command[2])]['temp']['day'])
-                return {"cod": 200, "temp": temp, "msg": f"In {city} werden es {temp}°{grad}", "user": user.uuid}
-
-            elif command[0] == "description":
-                    fcast = command_stadt(city,language,units,APIKEY)
-                    description = fcast[command[1]][int(command[2])]['weather'][0]['description']
-                    return {"cod": 200, "msg": f"Es wird {description}", "user": user.uuid}
-            else:
-                    return {"cod": 500, "msg": "Es ist ein Fehler aufgetreten.", "user": user.uuid}
+        elif command[0] == "description":
+            fcast = command_city(city,language,units,APIKEY)
+            description = fcast[command[1]][int(command[2])]['weather'][0]['description']
+            return {"cod": 200, "msg": f"Es wird {description}", "user": user.uuid}
+        else:
+            return {"cod": 500, "msg": "Es ist ein Fehler aufgetreten.", "user": user.uuid}
 
     else:
         if command[0] == 'temp':
             fcast = command_cord(language, units, APIKEY, msg, user)
             temp = int(fcast[command[1]][int(command[2])]['temp']['day'])
-            return {"cod": 200, "temp": temp, "msg": f"{keywordobject['out']} werden es {temp}°{grad}", "user": user.uuid}             
+            return {"cod": 200, "temp": temp, "msg": f"{keywordobject['out']} werden es {temp}°{grad}", "user": user.uuid}
+        elif command[0] == "description":
+            fcast = command_cord(language, units, APIKEY, msg, user)
+            description = fcast[command[1]][int(command[2])]['weather'][0]['description']
+            return {"cod": 200, "msg": f"Es wird {description}", "user": user.uuid}          
         else:
             return {"cod": 500, "msg": "Es ist ein Fehler aufgetreten.", "user": user.uuid}
