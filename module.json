@@ -28,28 +28,35 @@
 ],
 "commands": [
   {
-    "command-name": "temp-forecast",
+    "command-name": "temp-daily-1",
     "language": "DE",
     "examples": [
       "wie warm wird es morgen",
-      "wie ist die Temperatur morgen in Kiel",  
+      "wie ist die Temperatur morgen in Kiel" 
+    ]
+  },
+  {
+    "command-name": "temp-daily-2",
+    "language": "DE",
+    "examples": [  
       "Wie kalt ist es übermorgen in Hamburg"
     ]
   },
   {
-    "command-name": "temp-today",
+    "command-name": "temp-daily-0",
     "language": "DE",
     "examples": [
       "wie ist die Temperatur in Hamburg",
-      "wie hei\u00c3\u0178 ist es gerade in"
+      "wie hei\u00c3\u0178 ist es gerade in",
+      "Wie warm wird es heute"
     ]
   },
   {
-    "command-name": "rain",
+    "command-name": "description-daily-0",
     "language": "DE",
     "examples": [
       "Regnet es heute noch zuhause?",
-      "Wie hoch ist die Wahrscheinlichkeit das es heute regnet?"
+      "Wie hoch ist die Wahrscheinlichkeit das es heute regnet in Wiemersdorf?"
     ]
   }
 ]
