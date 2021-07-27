@@ -15,37 +15,92 @@
   }
 ],
 "commands": [
-  {
-    "command-name": "temp-daily-1",
-    "language": "DE",
-    "examples": [
-      "wie warm wird es morgen",
-      "wie ist die Temperatur morgen in Kiel" 
-    ]
-  },
-  {
-    "command-name": "temp-daily-2",
-    "language": "DE",
-    "examples": [  
-      "Wie kalt ist es übermorgen in Hamburg"
-    ]
-  },
-  {
-    "command-name": "temp-daily-0",
-    "language": "DE",
-    "examples": [
-      "wie ist die Temperatur in Hamburg",
-      "wie hei\u00c3\u0178 ist es gerade in",
-      "Wie warm wird es heute"
-    ]
-  },
-  {
-    "command-name": "description-daily-0",
-    "language": "DE",
-    "examples": [
-      "Regnet es heute noch zuhause?",
-      "Wie hoch ist die Wahrscheinlichkeit das es heute regnet in Schleswig?"
-    ]
-  }
-]
+      {
+          "command-name": "temp-daily-1",
+          "language": "DE",
+          "examples": [
+              "Wie kalt ist es morgen in Hamburg",
+              "wie heiß ist es morgen in",
+              "Wie warm wird es morgen",
+              "Wie kalt wird es morgen",
+              "wie kalt ist es morgen in"
+          ]
+      },
+      {
+          "command-name": "temp-daily-2",
+          "language": "DE",
+          "examples": [
+              "Wie kalt ist es übermorgen in Hamburg",
+              "wie heiß ist es übermorgen in",
+              "Wie warm wird es übermorgen",
+              "Wie kalt wird es übermorgen",
+              "wie kalt ist es übermorgen in"
+          ]
+      },
+      {
+          "command-name": "temp-daily-0",
+          "language": "DE",
+          "examples": [
+              "Wie kalt ist es heute in Hamburg",
+              "wie ist die Temperatur in Hamburg",
+              "wie heiß ist es gerade in",
+              "Wie warm wird es heute",
+              "Wie kalt wird es heute",
+              "wie kalt ist es gerade in"
+          ]
+      },
+      {
+          "command-name": "description-daily-0",
+          "language": "DE",
+          "examples": [
+              "Regnet es heute noch zuhause?",
+              "soll es heute regnen",
+              "scheint die sonne heute",
+              "Wie hoch ist die Wahrscheinlichkeit das es heute regnet in Schleswig?"
+          ]
+      },
+      {
+          "command-name": "description-daily-0",
+          "language": "ENG",
+          "examples": [
+              "Is it still raining at home today?",
+              "it is supposed to rain today",
+              "it should rain today",
+              "the sun shines today",
+              "shines the sun today",
+              "what is the probability that it will rain today in Hamburg"
+          ] 
+      },
+      {
+          "command-name": "temp-daily-0",
+          "language": "ENG",
+          "examples": [
+              "what is the temperature in Hamburg",
+              "how hot is it right now in",
+              "How warm will it be today",
+              "How warm it gets today",
+              "How warm it will be today"
+          ]
+      },
+      {
+          "command-name": "temp-daily-1",
+          "language": "ENG",
+          "examples": [
+              "How cold will it be in Hamburg tomorrow",
+              "How warm will it be tomorrow",
+              "How warm it gets tomorrow",
+              "How warm it will be tomorrow"
+          ]
+      },
+      {
+          "command-name": "temp-daily-2",
+          "language": "ENG",
+          "examples": [
+              "How cold will it be in Hamburg the day after tomorrow",
+              "How warm will it be the day after tomorrow",
+              "How warm it gets the day after tomorrow",
+              "How warm it will be the day after tomorrow"
+          ]
+      }
+  ]
 }

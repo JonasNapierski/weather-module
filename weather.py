@@ -30,7 +30,7 @@ def command_city(city,language,units,APIKEY):
 def command_cord(language,units,APIKEY,msg,user):
     keywordobject = city_name_missing(msg, user)
     fcast_url = f"https://api.openweathermap.org/data/2.5/onecall?lat={keywordobject['lat']}&lon={keywordobject['lon']}&lang={language}&units={units}&appid={APIKEY}"
-    fcast = requests.post(cord_url).json()
+    fcast = requests.post(fcast_url).json()
     return fcast
 
 def exec(msg, user, predicted_cmd):
@@ -43,10 +43,6 @@ def exec(msg, user, predicted_cmd):
     units = cfg['units']
     degree = cfg['degree']
     grad = degree.get(units)
-
-    print(msg)
-    print(mm)
-    print(command)
 
     if city_name_missing(msg, user) == None:
         city = city_name_given(mm)
