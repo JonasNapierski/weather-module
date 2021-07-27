@@ -8,22 +8,10 @@
 "language": "de",
 "keywords": [
   {
-    "keyword": "Heide Park",
-    "lat": 53.023668,
-    "lon": 9.878191,
-    "out": "Im Heide Park"
-  },
-  {
-    "keyword": "Schule",
-    "lat": 53.5531,
-    "lon": 9.5342,
-    "out": "In der Schule"
-  },
-  {
-    "keyword": "zuhause",
-    "lat": 53.5531,
-    "lon": 9.5342,
-    "out": "Zuhause"
+    "keyword": "Example",
+    "lat": 69,
+    "lon": 69,
+    "out": "I am Here"
   }
 ],
 "commands": [
@@ -56,7 +44,7 @@
     "language": "DE",
     "examples": [
       "Regnet es heute noch zuhause?",
-      "Wie hoch ist die Wahrscheinlichkeit das es heute regnet in Wiemersdorf?"
+      "Wie hoch ist die Wahrscheinlichkeit das es heute regnet in Schleswig?"
     ]
   }
 ]
