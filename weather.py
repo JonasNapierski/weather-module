@@ -25,7 +25,6 @@ def command_city(city,language,units,APIKEY):
     if data['cod'] == 200:
         fcast_url = f"https://api.openweathermap.org/data/2.5/onecall?lat={data['coord']['lat']}&lon={data['coord']['lon']}&units={units}&lang={language}&appid={APIKEY}"
         fcast = requests.post(fcast_url).json()
-        print(fcast)
         return fcast
 
 def command_cord(language,units,APIKEY,msg,user):
