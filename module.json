@@ -1,7 +1,7 @@
 {
 "main": "weather",
 "description": "Simple Weather Module for leni",
-"author": "Jonas Napierski; Leif Jahnel",
+"author": "Zirkumflex Lab; Leif Jahnel",
 "api_token": "",
 "units": "metric",
 "degree": {"standart":"K","imperial":"F","metric":"C"},
