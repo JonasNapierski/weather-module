@@ -2,7 +2,7 @@
 "main": "weather",
 "description": "Simple Weather Module for leni",
 "author": "Zirkumflex Lab; Leif Jahnel",
-"api_token": "",
+"api_token": "bb52847be7302c18a1fdaa482d0dbd3d",
 "units": "metric",
 "degree": {"standart":"K","imperial":"F","metric":"C"},
 "language": "de",
